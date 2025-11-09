@@ -1,78 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Distro Serenity</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distro Serenity</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://pxffz.github.io/DS/assets/DSLOGO.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://pxffz.github.io/DS/assets/DSLOGO.jpg">
 
-  <!-- Font Awesome 4.7 (stable) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-    /* Background */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #000000, #2b2b2b);
-      color: #fff;
-    }
+<style>
+  /* General Body */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #2b2b2b);
+    color: #fff;
+  }
 
-    /* Top menu */
-    .menu {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #000; /* fully black menu */
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      gap: 10px; /* spacing between logo/title and button */
-    }
+  /* Top menu */
+  .menu {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    gap: 10px;
+  }
 
-    /* Logo and title images */
-    .logo img {
-      height: 40px;
-    }
+  .logo img {
+    height: 40px;
+  }
 
-    .title-img {
-      height: 30px;
-    }
+  .title-img {
+    height: 30px;
+  }
 
-    /* Menu button (icon only, bigger & fitter) */
-    .menu-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px; /* bigger padding */
-      background-color: #000; /* black button */
-      border: none;
-      border-radius: 6px; /* slightly rounder */
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      font-size: 24px; /* bigger icon */
-    }
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background-color: #000;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 24px;
+  }
 
-    .menu-button:hover {
-      box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6); /* light grey glow on hover */
-    }
+  .menu-button:hover {
+    box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6);
+  }
 
-    /* Centered title */
-    .center-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-size: 48px;
-      font-weight: bold;
-    }
-  </style>
+  /* Centered Page Title */
+  .center-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  /* Squircle Menu */
+  .squircle-menu {
+    position: fixed;
+    top: 150px;
+    left: -400px; /* hidden initially */
+    width: 350px;
+    padding: 20px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #000000, #1c1c1c, #c0c0c0);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: left 1s ease, opacity 1s ease;
+    opacity: 0;
+    z-index: 900;
+  }
+
+  .squircle-menu.visible {
+    left: 20px; /* visible position */
+    opacity: 1;
+  }
+
+  .squircle-menu h2 {
+    margin: 0 0 10px 0;
+    color: #fff;
+  }
+
+  .squircle-menu p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Button inside squircle menu */
+  .menu-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-link:hover {
+    transform: scale(1.1); /* grows 10% */
+  }
+
+  /* Extra page content for scrolling */
+  .content {
+    padding: 20px;
+    max-width: 800px;
+    margin-left: 400px; /* so content isn’t hidden behind menu */
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+</style>
 </head>
 <body>
 
@@ -82,8 +140,6 @@
       <img src="https://pxffz.github.io/DS/assets/DS.jpg" alt="Logo">
       <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title" class="title-img">
     </div>
-
-    <!-- House Icon Button -->
     <a href="Index.html" class="menu-button">
       <i class="fa fa-home"></i>
     </a>
@@ -91,6 +147,34 @@
 
   <!-- Centered Page Title -->
   <div class="center-title">DISTRO SERENITY</div>
+
+  <!-- Squircle Menu -->
+  <div class="squircle-menu" id="squircleMenu">
+    <h2>Distro Serenity</h2>
+    <p>Welcome To Distro Serenity! In Here, We Have 1 Owner and 1 Single Developer (2 People) Working On This Website. In Here, We Have A Page That Has Roblox Music ID's That The Owner (Bitzy4Eva) and Ogiish (Ogiishkimanisii) Aka Developer Is Getting ID's And We Leak Them Here. We Also Got A Guilded Server If You Would Love To Join. Please Click The Button Below.</p>
+    <a href="https://www.guilded.gg/i/kgjAdQA2" target="_blank" class="menu-link">Join Guilded Server</a>
+  </div>
+
+  <!-- Extra Content for Scrolling -->
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo mi in risus varius, ac sollicitudin odio bibendum.</p>
+    <p>Scroll down to see the menu fade in smoothly from the left!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo mi in risus varius, ac sollicitudin odio bibendum.</p>
+    <p>More content to make scrolling noticeable.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo mi in risus varius, ac sollicitudin odio bibendum.</p>
+  </div>
+
+  <!-- JS for scroll detection -->
+  <script>
+    const squircleMenu = document.getElementById('squircleMenu');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { // fade in after scrolling down 100px
+        squircleMenu.classList.add('visible');
+      } else {
+        squircleMenu.classList.add('visible'); // stays visible even if scrolled up
+      }
+    });
+  </script>
 
 </body>
 </html>
