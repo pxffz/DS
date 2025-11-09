@@ -8,8 +8,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://pxffz.github.io/DS/assets/DSLOGO.jpg">
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-a6b2VqC0T0rU0x6C7n3+YtcZ+4+e5YztI3Ztj7LZzB5BqTcF1uYN1P1Z9Rz57+xV4K0Gk5eV4A7hvHTyNfxN2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     /* Background */
@@ -25,18 +25,22 @@
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      background-color: #000; /* full black menu */
+      background-color: #000; /* fully black menu */
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      gap: 15px; /* spacing between logo/title and button */
+      gap: 10px; /* spacing between logo/title and button */
     }
 
-    /* Logo image */
+    /* Logo and title images */
     .logo img {
       height: 40px;
+    }
+
+    .title-img {
+      height: 30px;
     }
 
     /* Menu button (icon only) */
@@ -76,11 +80,12 @@
   <div class="menu">
     <div class="logo">
       <img src="https://pxffz.github.io/DS/assets/DS.jpg" alt="Logo">
+      <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title" class="title-img">
     </div>
 
     <!-- House Icon Button -->
     <a href="Index.html" class="menu-button">
-      <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+      <i class="fas fa-house"></i>
     </a>
   </div>
 
