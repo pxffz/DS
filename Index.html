@@ -25,54 +25,42 @@
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      background-color: rgba(50, 50, 50, 0.3); /* 30% light greyish */
+      background-color: #000; /* full black menu */
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      backdrop-filter: blur(5px);
+      gap: 15px; /* spacing between logo/title and button */
     }
 
     /* Logo images */
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
     .logo img:first-child {
       height: 40px;
-      margin-right: 10px;
     }
 
     .logo img:last-child {
       height: 30px;
     }
 
-    /* Menu buttons */
-    .menu-buttons {
-      display: flex;
-      gap: 15px;
-      margin-left: auto;
-    }
-
+    /* Menu button (icon only) */
     .menu-button {
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding: 8px 15px;
+      justify-content: center;
+      padding: 8px 12px;
       background-color: #000; /* black button */
       border: none;
       border-radius: 5px;
       color: #fff;
-      text-decoration: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      position: relative;
+      text-decoration: none;
+      font-size: 18px;
     }
 
     .menu-button:hover {
-      box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6); /* light grey shine/glow */
+      box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6); /* light grey glow on hover */
     }
 
     /* Centered title */
@@ -94,12 +82,11 @@
       <img src="https://pxffz.github.io/DS/assets/DSLOGO.jpg" alt="Logo">
       <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title">
     </div>
-    <div class="menu-buttons">
-      <a href="Index.html" class="menu-button">
-        <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-        Index.html
-      </a>
-    </div>
+
+    <!-- House Icon Button -->
+    <a href="Index.html" class="menu-button">
+      <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+    </a>
   </div>
 
   <!-- Centered Page Title -->
