@@ -17,8 +17,8 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #000000, #2b2b2b);
     color: #fff;
-    min-height: 200vh; /* tall page for scrolling */
-    overflow-x: hidden;
+    overflow: hidden; /* prevent scrolling */
+    height: 100vh; /* full viewport */
   }
 
   /* Top menu */
@@ -30,7 +30,7 @@
     background-color: #000;
     position: fixed;
     width: 100%;
-    height: 60px; /* fixed height */
+    height: 60px;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -70,21 +70,10 @@
     box-shadow: 0 4px 12px rgba(200,200,200,0.6);
   }
 
-  /* Centered Page Title */
-  .center-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  /* Squircle Menu (always visible) */
+  /* Squircle Menu (fixed on left) */
   .squircle-menu {
     position: fixed;
-    top: 150px;
+    top: 100px;
     left: 20px;
     width: 350px;
     padding: 20px;
@@ -121,10 +110,15 @@
     transform: scale(1.1);
   }
 
-  /* Page padding to prevent overlap with fixed menu */
-  .page-content {
-    padding-top: 80px;
-    padding-left: 400px; /* space for squircle menu */
+  /* Center content */
+  .center-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
   }
 
 </style>
@@ -150,11 +144,8 @@
     <a href="https://www.guilded.gg/i/kgjAdQA2" target="_blank" class="menu-link">Join Guilded Server</a>
   </div>
 
-  <!-- Page Content -->
-  <div class="page-content">
-    <div class="center-title">DISTRO SERENITY</div>
-    <!-- Add more content here if needed -->
-  </div>
+  <!-- Centered Title -->
+  <div class="center-title">DISTRO SERENITY</div>
 
 </body>
 </html>
