@@ -25,7 +25,6 @@
   .menu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 20px;
     background-color: #000;
     position: fixed;
@@ -34,6 +33,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    gap: 10px;
   }
 
   .menu-left {
@@ -47,13 +47,7 @@
     height: auto;
   }
 
-  .menu-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .menu-right a {
+  .menu-left a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +60,7 @@
     transition: all 0.3s ease;
   }
 
-  .menu-right a:hover {
+  .menu-left a:hover {
     box-shadow: 0 4px 12px rgba(200,200,200,0.6);
   }
 
@@ -109,16 +103,16 @@
     transform: scale(1.1);
   }
 
-  /* Page title on the right side */
+  /* Page title to the right of menu */
   .page-title {
     position: absolute;
-    right: 20px;
+    left: calc(20px + 50px + 10px + 50px + 8px*2); /* 20px padding + logo + gap + title image + gap + buttons width approx */
     top: 50%;
     transform: translateY(-50%);
     font-size: 48px;
     font-weight: bold;
-    text-align: right;
-    max-width: 60%; /* fits nicely with the left menu */
+    text-align: left;
+    max-width: calc(100% - 400px); /* leave space for squircle menu on left if needed */
   }
 
 </style>
@@ -130,8 +124,6 @@
     <div class="menu-left">
       <img src="https://pxffz.github.io/DS/assets/DS.jpg" alt="Logo">
       <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title">
-    </div>
-    <div class="menu-right">
       <a href="Index.html"><i class="fa fa-house"></i></a>
       <a href="roblox.html"><i class="fa-solid fa-music"></i></a>
     </div>
