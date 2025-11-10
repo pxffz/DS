@@ -25,6 +25,7 @@
   .menu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
     background-color: #000;
     position: fixed;
@@ -32,6 +33,18 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    gap: 10px;
+  }
+
+  .menu-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-right {
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
 
@@ -67,24 +80,17 @@
     font-weight: bold;
   }
 
-  /* Squircle Menu */
+  /* Squircle Menu (always visible) */
   .squircle-menu {
     position: fixed;
     top: 150px;
-    left: -400px; /* hidden initially */
+    left: 20px;
     width: 350px;
     padding: 20px;
     border-radius: 30px;
     background: linear-gradient(90deg, #000000, #1c1c1c, #c0c0c0);
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    transition: left 1s ease, opacity 1s ease;
-    opacity: 0;
     z-index: 900;
-  }
-
-  .squircle-menu.visible {
-    left: 20px;
-    opacity: 1;
   }
 
   .squircle-menu h2 { color: #fff; margin: 0 0 10px 0; }
@@ -102,68 +108,37 @@
     transition: transform 0.3s ease;
   }
   .menu-link:hover { transform: scale(1.1); }
-
-  /* Music icon button */
-  .menu-button-squircle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    margin-top: 10px;
-    background-color: #000;
-    border: none;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-size: 24px;
-  }
-  .menu-button-squircle:hover {
-    box-shadow: 0 4px 12px rgba(200,200,200,0.6);
-  }
 </style>
 </head>
 <body>
 
   <!-- Top Menu -->
   <div class="menu">
-    <div class="logo">
+    <div class="menu-left">
       <img src="https://pxffz.github.io/DS/assets/DS.jpg" alt="Logo">
       <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title" class="title-img">
     </div>
-    <a href="Index.html" class="menu-button">
-      <i class="fa fa-house"></i>
-    </a>
+    <div class="menu-right">
+      <a href="Index.html" class="menu-button">
+        <i class="fa fa-house"></i>
+      </a>
+      <a href="roblox.html" class="menu-button">
+        <i class="fa-solid fa-music"></i>
+      </a>
+    </div>
   </div>
 
   <!-- Centered Page Title -->
   <div class="center-title">DISTRO SERENITY</div>
 
-  <!-- Squircle Menu -->
-  <div class="squircle-menu" id="squircleMenu">
+  <!-- Squircle Menu (always visible) -->
+  <div class="squircle-menu">
     <h2>Distro Serenity</h2>
     <p>Welcome To Distro Serenity! In Here, We Have 1 Owner and 1 Single Developer (2 People) Working On This Website. In Here, We Have A Page That Has Roblox Music ID's That The Owner (Bitzy4Eva) and Ogiish (Ogiishkimanisii) Aka Developer Is Getting ID's And We Leak Them Here. We Also Got A Guilded Server If You Would Love To Join. Please Click The Button Below.</p>
-
-    <!-- Music Button -->
-    <a href="roblox.html" class="menu-button-squircle">
-      <i class="fa-solid fa-music"></i>
-    </a>
 
     <!-- Guilded Link Button -->
     <a href="https://www.guilded.gg/i/kgjAdQA2" target="_blank" class="menu-link">Join Guilded Server</a>
   </div>
-
-  <script>
-    const squircleMenu = document.getElementById('squircleMenu');
-    window.addEventListener('scroll', () => {
-      // Trigger menu fade-in only when user scrolls near bottom (100px from bottom)
-      const scrollableHeight = document.body.scrollHeight - window.innerHeight;
-      if (window.scrollY >= scrollableHeight - 100) {
-        squircleMenu.classList.add('visible');
-      }
-    });
-  </script>
 
 </body>
 </html>
