@@ -17,8 +17,8 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #000000, #2b2b2b);
     color: #fff;
-    overflow: hidden; /* prevent scrolling */
-    height: 100vh; /* full viewport */
+    overflow: hidden;
+    height: 100vh;
   }
 
   /* Top menu */
@@ -103,16 +103,16 @@
     transform: scale(1.1);
   }
 
-  /* Page title to the right of menu */
+  /* Page title on the right side */
   .page-title {
     position: absolute;
-    left: calc(20px + 50px + 10px + 50px + 8px*2); /* 20px padding + logo + gap + title image + gap + buttons width approx */
+    right: 20px; /* 20px from right edge */
     top: 50%;
     transform: translateY(-50%);
     font-size: 48px;
     font-weight: bold;
-    text-align: left;
-    max-width: calc(100% - 400px); /* leave space for squircle menu on left if needed */
+    text-align: right;
+    max-width: 60%; /* fits nicely, does not overlap menu */
   }
 
 </style>
