@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="https://pxffz.github.io/DS/assets/DSLOGO.jpg">
 
 <!-- Font Awesome 6 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-a6b2VqC0T0rU0x6C7n3+YtcZ+4+e5YztI3Ztj7LZzB5BqTcF1uYN1P1Z9Rz57+xV4K0Gk5eV4A7hvHTyNfxN2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
 <style>
   body {
@@ -35,13 +35,8 @@
     gap: 10px;
   }
 
-  .logo img {
-    height: 40px;
-  }
-
-  .title-img {
-    height: 30px;
-  }
+  .logo img { height: 40px; }
+  .title-img { height: 30px; }
 
   .menu-button {
     display: flex;
@@ -59,7 +54,7 @@
   }
 
   .menu-button:hover {
-    box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6);
+    box-shadow: 0 4px 12px rgba(200,200,200,0.6);
   }
 
   /* Centered Page Title */
@@ -92,16 +87,8 @@
     opacity: 1;
   }
 
-  .squircle-menu h2 {
-    margin: 0 0 10px 0;
-    color: #fff;
-  }
-
-  .squircle-menu p {
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.5;
-  }
+  .squircle-menu h2 { color: #fff; margin: 0 0 10px 0; }
+  .squircle-menu p { color: #fff; font-size: 14px; line-height: 1.5; }
 
   /* Guilded button inside menu */
   .menu-link {
@@ -114,12 +101,9 @@
     text-decoration: none;
     transition: transform 0.3s ease;
   }
+  .menu-link:hover { transform: scale(1.1); }
 
-  .menu-link:hover {
-    transform: scale(1.1);
-  }
-
-  /* Music icon button inside squircle menu */
+  /* Music icon button */
   .menu-button-squircle {
     display: flex;
     align-items: center;
@@ -135,9 +119,8 @@
     text-decoration: none;
     font-size: 24px;
   }
-
   .menu-button-squircle:hover {
-    box-shadow: 0 4px 12px rgba(200, 200, 200, 0.6);
+    box-shadow: 0 4px 12px rgba(200,200,200,0.6);
   }
 </style>
 </head>
@@ -150,7 +133,7 @@
       <img src="https://pxffz.github.io/DS/assets/DS_TITLE.jpg" alt="Title" class="title-img">
     </div>
     <a href="Index.html" class="menu-button">
-      <i class="fa fa-home"></i>
+      <i class="fa fa-house"></i>
     </a>
   </div>
 
@@ -164,7 +147,7 @@
 
     <!-- Music Button -->
     <a href="roblox.html" class="menu-button-squircle">
-      <i class="fa fa-music"></i>
+      <i class="fa-solid fa-music"></i>
     </a>
 
     <!-- Guilded Link Button -->
@@ -174,8 +157,9 @@
   <script>
     const squircleMenu = document.getElementById('squircleMenu');
     window.addEventListener('scroll', () => {
-      // trigger only when user scrolls to bottom
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      // Trigger menu fade-in only when user scrolls near bottom (100px from bottom)
+      const scrollableHeight = document.body.scrollHeight - window.innerHeight;
+      if (window.scrollY >= scrollableHeight - 100) {
         squircleMenu.classList.add('visible');
       }
     });
