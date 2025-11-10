@@ -94,7 +94,6 @@
     line-height: 1.5;
   }
 
-  /* Guilded button inside menu */
   .menu-link {
     display: inline-block;
     margin-top: 15px;
@@ -110,15 +109,16 @@
     transform: scale(1.1);
   }
 
-  /* Center content */
-  .center-title {
+  /* Page title on the right side */
+  .page-title {
     position: absolute;
-    left: 50%;
+    right: 20px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     font-size: 48px;
     font-weight: bold;
-    text-align: center;
+    text-align: right;
+    max-width: 60%; /* fits nicely with the left menu */
   }
 
 </style>
@@ -144,8 +144,8 @@
     <a href="https://www.guilded.gg/i/kgjAdQA2" target="_blank" class="menu-link">Join Guilded Server</a>
   </div>
 
-  <!-- Centered Title -->
-  <div class="center-title">DISTRO SERENITY</div>
+  <!-- Page Title -->
+  <div class="page-title">DISTRO SERENITY</div>
 
 </body>
 </html>
